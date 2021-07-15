@@ -30,7 +30,7 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 console.log('task 1b', createMenuItem('tacos', 8, 'Lunch'));
-console.log('task 1b', createMenuItem('pizza',5,'lunch'));
+console.log('task 1b', createMenuItem('pizza',5,'Lunch'));
 console.log('task 1b', createMenuItem('waffles', 8, 'breakfast'));
 //not tested
 
@@ -52,11 +52,18 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  //creating a method called discount - and it takes a parameter of customer and it gives a discount based on the argument passed in
-  //student or teacehr is should be 25% off price - hint need to reference this.price
-  //public 10% discount
+  discount: function(customer){
+    if(customer === "public"){
+      return this.price * .9;
+    }else{
+      return this.price * .75;
+    }
+  }
 }
 
+console.log('task 2', burger.discount('public'));
+console.log('task 2', burger.discount('student'));
+console.log('task 2', burger.discount('teacher'));
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -76,7 +83,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
-//not being tested
+console.log('task 3', reviews[5]);
 
 
 
